@@ -2,7 +2,7 @@ package gateway
 
 import (
 	"github.com/gogo/googleapis/google/api"
-	"github.com/grpc-ecosystem/grpc-gateway/runtime"
+	"github.com/grpc-ecosystem/grpc-gateway/v2/runtime"
 )
 
 // HTTPBodyMarshaler is a Marshaler which supports marshaling of a
@@ -24,7 +24,7 @@ func (h *HTTPBodyMarshaler) ContentTypeFromMessage(v interface{}) string {
 	if httpBody, ok := v.(*api.HttpBody); ok {
 		return httpBody.GetContentType()
 	}
-	return h.Marshaler.ContentType()
+	return h.Marshaler.ContentType(v)
 }
 
 // Marshal marshals "v" by returning the body bytes if v is a
