@@ -1,4 +1,4 @@
-module github.com/cosmos/gogogateway
+module github.com/cosmos/gogogateway/v2
 
 go 1.12
 
