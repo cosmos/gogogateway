@@ -14,8 +14,8 @@ type HTTPBodyMarshaler struct {
 }
 
 // ContentType implementation to keep backwards compatability with marshal interface
-func (h *HTTPBodyMarshaler) ContentType() string {
-	return h.ContentTypeFromMessage(nil)
+func (h *HTTPBodyMarshaler) ContentType(v interface{}) string {
+	return h.ContentTypeFromMessage(v)
 }
 
 // ContentTypeFromMessage in case v is a google.api.HttpBody message it returns
